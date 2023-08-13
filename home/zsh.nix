@@ -10,7 +10,12 @@
 
       plugins = [
         "git"
+	"fzf"
       ];
+    };
+
+    shellAliases = {
+      hsw = "home-manager switch";
     };
   };
 }

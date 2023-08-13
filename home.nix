@@ -30,6 +30,7 @@
   home.packages = [
     pkgs.firefox
     pkgs.htop
+    pkgs.fzf
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

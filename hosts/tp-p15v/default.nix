@@ -20,15 +20,12 @@
   };
 
   # Enable swap on luks
-  boot.initrd.luks.devices."luks-55a1601d-2052-45c9-822f-0ac9136f3325".device = "/dev/disk/by-uuid/55a1601d-2052-45c9-822f-0ac9136f3325";
-  boot.initrd.luks.devices."luks-55a1601d-2052-45c9-822f-0ac9136f3325".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices."luks-48842da3-446a-4d65-8c1c-3acfab7466d6".device = "/dev/disk/by-uuid/48842da3-446a-4d65-8c1c-3acfab7466d6";
+  boot.initrd.luks.devices."luks-48842da3-446a-4d65-8c1c-3acfab7466d6".keyFile = "/crypto_keyfile.bin";
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  nixpkgs.config.allowUnfree = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.hostName = "tp-p15v"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -51,7 +48,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas Langen";
@@ -65,35 +61,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     pulsemixer
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
   programs.zsh.enable = true;

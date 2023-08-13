@@ -6,6 +6,9 @@
     ./home/git.nix
     ./home/neovim.nix
     ./home/zsh.nix
+    ./home/rofi.nix
+    ./home/i3.nix
+    ./home/alacritty.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -25,6 +28,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.firefox
+    pkgs.htop
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

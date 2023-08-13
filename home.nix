@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./home/tmux.nix
+    ./home/git.nix
+    ./home/neovim.nix
+    ./home/zsh.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "lukas";
@@ -67,46 +74,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.tmux = {
-    enable = true;
-    shortcut = "a";
-    keyMode = "vi";
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "Lukas Langen";
-    userEmail = "lukas@langen.dev";
-    
-    extraConfig = {
-      core = {
-        editor = "nvim";
-      };
-
-      init = {
-        defaultBranch = "main";
-      };
-    };
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "aussiegeek";
-      plugins = [
-        "git"
-      ];
-    };
-  };
 }

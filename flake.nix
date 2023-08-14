@@ -3,11 +3,19 @@
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
-        home-manager.url = "github:nix-community/home-manager/release-23.05";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+        home-manager = {
+            url = "github:nix-community/home-manager/release-23.05";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        agenix = {
+            url = "github:ryantm/agenix";
+            inputs.darwin.follows = "";
+        };
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+    outputs = inputs@{ self, nixpkgs, home-manager, agenix, ... }: {
         nixosConfigurations = {
             "tp-p15v" = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -21,6 +29,14 @@
                         home-manager.useUserPackages = true;
 
                         home-manager.users.lukas = import ./home;
+                    }
+
+                    agenix.nixosModules.default
+
+                    {
+                        environment.systemPackages = [
+                            agenix.packages.x86_64-linux.default
+                        ];
                     }
                 ];
             };

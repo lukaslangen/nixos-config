@@ -31,6 +31,6 @@ in
     	# Change focus between tiling / floating windows
     	"${mod}+d" = "focus mode_toggle";
 
-        "${mod}+x" = "exec i3lock --color=000000";
+        "${mod}+x" = "exec xflock4";
     };
 }

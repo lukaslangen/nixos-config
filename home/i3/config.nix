@@ -21,6 +21,10 @@
         ];
     };
 
+    xsession.windowManager.i3.extraConfig = ''
+        default_border none
+    '';
+
     home.file = {
         ".wallpaper.jpg".source = ./wallpaper.jpg;
     };

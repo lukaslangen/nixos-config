@@ -7,4 +7,6 @@
         ./bars.nix
         ./menu.nix
     ];
+
+    xsession.windowManager.i3.enable = true;
 }

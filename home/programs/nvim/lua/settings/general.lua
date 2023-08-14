@@ -19,6 +19,8 @@ opt.smartcase = true
 opt.fileignorecase = true
 opt.incsearch = true
 
+opt.mouse = ""
+
 vim.cmd([[
     let g:netrw_liststyle = 4
     let g:netrw_banner = 0

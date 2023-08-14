@@ -2,9 +2,9 @@
 
 {
   imports = [
+    ./home
     ./home/tmux.nix
     ./home/git.nix
-    ./home/neovim.nix
     ./home/zsh.nix
     ./home/rofi.nix
     ./home/i3.nix

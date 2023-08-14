@@ -2,7 +2,7 @@
 
 > WIP: Neither complete nor (possibly) correct
 
-1. Connect to internet: `nmcli dev wifi connect SSID`
+1. Connect to internet: `nmcli --ask dev wifi connect SSID`
 2. `nix-shell -p git neovim`
 3. Add `nix.settings.experimental-features = [ "nix-command" "flakes" ];` to /etc/nixos/configuration.nix
 4. `sudo mv /etc/nixos /etc/nixos.bak`

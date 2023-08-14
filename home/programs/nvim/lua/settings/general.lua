@@ -21,6 +21,8 @@ opt.incsearch = true
 
 opt.mouse = ""
 
+opt.wrap = false
+
 vim.cmd([[
     let g:netrw_liststyle = 4
     let g:netrw_banner = 0

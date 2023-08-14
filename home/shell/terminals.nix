@@ -6,6 +6,7 @@
 
         settings = {
             font.size = 8.5;
+            window.opacity = 0.9;
         };
     };
 }

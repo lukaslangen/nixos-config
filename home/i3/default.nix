@@ -9,4 +9,5 @@
     ];
 
     xsession.windowManager.i3.enable = true;
+    services.picom.enable = true;
 }

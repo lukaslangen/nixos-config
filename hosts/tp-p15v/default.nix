@@ -4,9 +4,7 @@
     imports = [
         ./hardware-configuration.nix
         ./boot.nix
-        ../shared/locale.nix
-        ../shared/user.nix
-        ../shared/sys-programs.nix
+        ../shared
         ../../modules/gui.nix
     ];
 

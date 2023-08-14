@@ -1,0 +1,9 @@
+configuration {
+    combi-mode: "drun,ssh";
+    location: 0;
+    modi: "window,drun,ssh,combi";
+    show-icons: true;
+    xoffset: 0;
+    yoffset: 0;
+}
+@theme "arthur"

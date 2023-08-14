@@ -1,13 +1,11 @@
 { pkgs, ... }:
 
 {
-    programs.rofi = {
-        enable = true;
+    home.packages = with pkgs; [
+        rofi
+    ];
 
-        extraConfig = {
-            modi = "window,drun,ssh,combi";
-            combi-mode = "drun,ssh";
-            show-icons = true;
-        };
+    home.file = {
+        ".config/rofi/config.rasi".source = ./rofi/config.rasi;
     };
 }
